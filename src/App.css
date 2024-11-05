@@ -1,58 +1,86 @@
-#root{
-    background-image: url("./assets/images/bg.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
+#root {
+  background-image: url("./assets/images/bg.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
-.card{
-    min-width: 500px;
-    width: 100%;
-    padding: 2em 1.5em;
-    background-color: #ded8d880;
-    backdrop-filter: brightness(0.8) blur(15px);
-    border-radius: 1.5em;
+.card {
+  min-width: 500px;
+  width: 100%;
+  padding: 2em 1.5em;
+  background-color: #ded8d880;
+  backdrop-filter: brightness(0.8) blur(15px);
+  border-radius: 1.5em;
+  box-shadow: 0 0 25px 0 #3089bc4a;
+  transition: box-shadow 0.25s;
+  &:hover {
     box-shadow: 0 0 25px 0 #3089bc4a;
-    transition: box-shadow 0.25s;
-    &:hover{
-        box-shadow: 0 0 25px 0 #3089bc4a;
-    }
+  }
 }
 
 .card__title,
-.card__subtitle{
-    text-align: center;
+.card__subtitle {
+  text-align: center;
 }
-.card__body{
-    display: flex;
-    flex-direction: row; 
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
+.card__body {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .map-container {
-    width: 50%; 
-    height: 300px; 
-  }
-.card__temperature{
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 0.25em;
+  width: 50%;
+  height: 300px;
 }
-.card__button{
-    display: block;
-    margin: 0 auto;
-    background-color: #0000001e;
-    backdrop-filter: brightness(1) blur(15px);
-    box-shadow: 0 0 25px 0 #3089bc4a;
+.card__temperature {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+.card__button {
+  display: block;
+  margin: 1em auto 0 auto;
+  background-color: #0000001e;
+  backdrop-filter: brightness(1) blur(15px);
+  box-shadow: 0 0 25px 0 #3089bc4a;
 }
 .card__info {
-    width: 50%;
-    align-items: center;
-    text-align: center;
-    margin-left: 2em;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: 2em;
+}
+
+@media (max-width: 700px) {
+  .card {
+    max-width: 90%;
+    padding: 1.5em 1em;
   }
+
+  .card__body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .card__info {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .map-container {
+    width: 70%;
+    height: 250px;
+  }
+}
