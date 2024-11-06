@@ -85,7 +85,7 @@ function App() {
         const iconName = Object.keys(conditionCodes).find((key) =>
           conditionCodes[key].includes(weatherId)
         );
-
+        
         setWeather({
           city: res.data?.name,
           country: res.data?.sys?.country,
@@ -108,11 +108,13 @@ function App() {
       });
   }, [Coords, toggle]);
 
+
   return (
     <>
     {Loading && <Loader/>}
-    {!Loading && Error && <h1>{Error}</h1>}
-    {!Loading && Weather && <Card Weather={Weather} toggle={toggle} Coords={Coords} setToggle={setToggle} setCoords={setCoords} />}
+    {!Loading && !Error && <h1>{Error}</h1>}
+    {!Loading && Weather && 
+    <Card Weather={Weather} toggle={toggle} Coords={Coords} setToggle={setToggle} setCoords={setCoords} />}
     </>
   );
 }
