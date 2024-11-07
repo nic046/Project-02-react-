@@ -1,5 +1,4 @@
 #root {
-  background-image: url("./assets/images/clear.gif");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -15,13 +14,17 @@
   width: 100%;
   padding: 2em 1.5em;
   background-color: #ded8d880;
-  backdrop-filter: brightness(0.8) blur(15px);
+  backdrop-filter: brightness(0.75) blur(20px);
   border-radius: 1.5em;
   box-shadow: 0 0 25px 0 #3089bc4a;
   transition: box-shadow 0.25s;
   &:hover {
     box-shadow: 0 0 25px 0 #3089bc4a;
   }
+}
+
+.card__main{
+  font-size: x-large;
 }
 
 .card__title,
@@ -36,8 +39,12 @@
   justify-content: center;
 }
 .map-container {
+  padding-top: 2em;
   width: 50%;
-  height: 300px;
+  p{
+    font-size: smaller;
+    text-align: center;
+  }
 }
 .card__temperature {
   font-size: 2.5rem;
@@ -56,6 +63,17 @@
   align-items: center;
   text-align: center;
   margin-left: 2em;
+}
+
+.card__search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input{
+    margin: 1em; 
+    height: 2.5em;
+    text-align: center;
+  }
 }
 
 @media (max-width: 700px) {
